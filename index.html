@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Physics Loop Lab - BLUE/YELLOW EDITION</title>
+    <!-- Memphis Fonts: Bangers (Headings), Comic Neue (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Comic Neue"', 'cursive', 'sans-serif'],
+              comic: ['"Bangers"', 'cursive'],
+            },
+            colors: {
+              pop: {
+                blue: '#306EFF',    // Intense Royal Blue
+                yellow: '#FFD600',  // Vibrant School Bus Yellow
+                sky: '#93C5FD',     // Light Blue
+                dark: '#000000',
+                white: '#FFFFFF',
+                pink: '#F87171',    // Harmonious Light Red
+                lime: '#FECACA',    // Lighter Red (Success states)
+                cyan: '#00FFFF',    // Cyan
+                green: '#4ADE80',   // UPDATED: Vibrant Green
+              }
+            },
+            boxShadow: {
+              'comic': '5px 5px 0px 0px #000000',
+              'comic-lg': '10px 10px 0px 0px #000000',
+              'comic-hover': '2px 2px 0px 0px #000000',
+            },
+            backgroundImage: {
+              'halftone': 'radial-gradient(circle, #000 2px, transparent 2.5px)',
+              'halftone-blue': 'radial-gradient(circle, #306EFF 2px, transparent 2.5px)',
+              'grid-pattern': "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+              'zigzag': "linear-gradient(135deg, #FFD600 25%, transparent 25%), linear-gradient(225deg, #FFD600 25%, transparent 25%), linear-gradient(45deg, #FFD600 25%, transparent 25%), linear-gradient(315deg, #FFD600 25%, transparent 25%)",
+            },
+            backgroundSize: {
+              'halftone': '20px 20px',
+              'grid-pattern': '40px 40px',
+              'zigzag': '20px 20px',
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'shake': 'shake 0.5s ease-in-out infinite',
+            },
+            keyframes: {
+              shake: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FFFFFF;
+        color: #000000;
+        cursor: auto;
+      }
+      
+      /* Memphis Scrollbar (Default) */
+      ::-webkit-scrollbar {
+        width: 12px;
+        background: #000;
+        border-left: 2px solid black;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #FFD600;
+        border: 2px solid black;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #306EFF;
+      }
+
+      /* No Scrollbar Utility */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+
+      /* Pop Card Utility */
+      .pop-card {
+        background-color: white;
+        border: 4px solid black;
+        box-shadow: 8px 8px 0px 0px black;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      
+      /* Range Slider - Blue/Yellow Style */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 24px;
+        width: 24px;
+        background: #FFD600;
+        border: 3px solid black;
+        border-radius: 50%;
+        margin-top: -10px;
+        box-shadow: 2px 2px 0px 0px black;
+        cursor: pointer;
+        transition: transform 0.1s;
+      }
+      input[type=range]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+        background: #306EFF;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8px;
+        background: #000;
+        border-radius: 4px;
+      }
+      
+      /* Text Stroke for Comic Headings */
+      .text-shadow-pop {
+        text-shadow: 3px 3px 0px #000;
+      }
+      .text-shadow-white {
+        text-shadow: 3px 3px 0px #FFF, 3px 3px 0px #000;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white min-h-screen font-sans antialiased overflow-hidden text-black selection:bg-pop-yellow selection:text-black">
+    <div id="root"></div>
+  </body>
+</html>

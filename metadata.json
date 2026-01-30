@@ -1,0 +1,5 @@
+{
+  "name": "Physics Loop Lab",
+  "description": "An interactive A-Level Physics learning platform focusing on Circular Motion and Roller Coasters. Features theory visualization, real experiment logging, and a physics engine simulation.",
+  "requestFramePermissions": []
+}
